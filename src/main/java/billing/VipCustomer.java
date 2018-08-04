@@ -1,6 +1,6 @@
 package billing;
 
-public class VipCustomer extends Customer {
+public class VipCustomer extends Customer implements IPresent {
 
     private double bilingFactor = 0.8;
 
@@ -23,5 +23,10 @@ public class VipCustomer extends Customer {
                 "m_cuName='" + m_cuName + '\'' +
                 ", m_cuCurrentBill=" + m_cuCurrentBill +
                 '}';
+    }
+
+    @Override
+    public void receivedPresent(String present) {
+        System.out.println("VIP customer received present: " + present);
     }
 }
